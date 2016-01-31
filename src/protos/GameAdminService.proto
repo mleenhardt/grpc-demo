@@ -1,0 +1,44 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Demo.Common.ServiceDefinition";
+
+service GameAdminService {
+	// Unary
+	rpc GetAccount(AccountRequest) returns (Account) {}
+	// Client streaming
+	rpc GetChatHistory(stream ChatMessageRequest) returns (ChatMessageCollection) {}
+	// Server streaming
+	rpc ListenChat(ChatMessageRequest) returns (stream ChatMessage) {}
+	// Bidirectional streaming
+	rpc Chat(stream ChatMessage) returns (stream ChatMessage) {}
+}
+
+message AccountRequest {
+	int32 accountId = 1;
+}
+
+message Account {
+	int32 id = 1;
+	string email = 2;
+	repeated Character characters = 3;
+}
+
+message Character {
+	int32 id = 1;
+	string name = 2;
+}
+
+message ChatMessageRequest {
+	int32 accountId = 1;
+}
+
+message ChatMessage {
+	int32 characterId = 1;
+	int64 timestampUtc = 2;
+	string message = 3;
+}
+
+message ChatMessageCollection {
+	int32 accountId = 1;
+	repeated ChatMessage chatMessages = 2;
+}
