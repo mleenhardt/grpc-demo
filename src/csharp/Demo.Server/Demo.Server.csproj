@@ -57,7 +57,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameAdminServiceImpl.cs" />
+    <Compile Include="GameAdminServiceServer.cs" />
+    <Compile Include="HardcodedAccountRepository.cs" />
+    <Compile Include="HardcodedChatMessageRepository.cs" />
+    <Compile Include="IAccountRepository.cs" />
+    <Compile Include="IChatMessageRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
