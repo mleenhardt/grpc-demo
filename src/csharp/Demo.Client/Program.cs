@@ -14,6 +14,7 @@ namespace Demo.Client
             rpcChannel.ConnectAsync().Wait();
             Log($"GameAdminServiceClient connected to {rpcChannel.ResolvedTarget}, channel state = {rpcChannel.State}");
 
+            rpcClient.ChatAsync().Wait();
 
             Log($"GameAdminServiceClient disconnecting from {rpcChannel.ResolvedTarget}, channel state = {rpcChannel.State}");
             rpcChannel.ShutdownAsync().Wait();
