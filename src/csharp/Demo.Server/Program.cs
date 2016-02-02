@@ -18,12 +18,19 @@ namespace Demo.Server
                 Services = { GameAdminService.BindService(gameAdminService) },
                 Ports = { new Grpc.Core.ServerPort("localhost", port, ServerCredentials.Insecure) }
             };
+            rpcServer.Start();
 
-            Console.WriteLine("RouteGuide server listening on port " + port);
-            Console.WriteLine("Press any key to stop the server...");
+            Log("GameAdminService server listening on port " + port);
+            Log("Press any key to stop the server...");
             Console.ReadKey();
 
+            Log("GameAdminService shutting down");
             rpcServer.ShutdownAsync().Wait();
+        }
+
+        static void Log(string message)
+        {
+            Console.WriteLine($"{DateTime.UtcNow} -- {message}");
         }
     }
 }
