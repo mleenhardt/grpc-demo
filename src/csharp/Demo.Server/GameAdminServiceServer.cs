@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Demo.Common;
 using Demo.Common.ServiceDefinition;
 using Grpc.Core;
 
@@ -50,6 +51,9 @@ namespace Demo.Server
             Log(context);
             using (IAsyncEnumerator<ChatMessage> enumerator = _chatMessageRepository.ListenAccountChatAsync(request.AccountId).GetEnumerator())
             {
+                // Custom reponse header
+                await context.WriteResponseHeadersAsync(new Metadata { new Metadata.Entry("Some-response-header-key", "Some-response-header-value") });
+
                 // Async enumerator
                 while (await enumerator.MoveNext())
                 {
@@ -58,13 +62,25 @@ namespace Demo.Server
                 }
 
                 // Custom response trailer
-                context.ResponseTrailers.Add(new Metadata.Entry("Some response trailer key", "Some response trailer value"));
+                context.ResponseTrailers.Add(new Metadata.Entry("Some-response-tailer-key", "Some-response-trailer-value"));
             }
         }
 
-        public Task Chat(IAsyncStreamReader<ChatMessage> requestStream, IServerStreamWriter<ChatMessage> responseStream, ServerCallContext context)
+        public async Task Chat(IAsyncStreamReader<ChatMessage> requestStream, IServerStreamWriter<ChatMessage> responseStream, ServerCallContext context)
         {
-            throw new System.NotImplementedException();
+            Log(context);
+
+            Program.Log("Server starting to chat");
+            while (await requestStream.MoveNext())
+            {
+                ChatMessage clientChatMessage = requestStream.Current;
+                Program.Log($"Client says {clientChatMessage}");
+
+                ChatMessage serverChatMessage = Utility.GetRandomChatMessage(0);
+                await responseStream.WriteAsync(serverChatMessage);
+            }
+
+            // Returning from the method will automatically complete the response async enumerator on the client.
         }
     }
 }

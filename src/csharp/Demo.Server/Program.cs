@@ -4,7 +4,7 @@ using Grpc.Core;
 
 namespace Demo.Server
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -28,7 +28,7 @@ namespace Demo.Server
             rpcServer.ShutdownAsync().Wait();
         }
 
-        static void Log(string message)
+        public static void Log(string message)
         {
             Console.WriteLine($"{DateTime.UtcNow} -- {message}");
         }
