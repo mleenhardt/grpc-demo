@@ -39,6 +39,5 @@ message ChatMessage {
 }
 
 message ChatMessageCollection {
-	int32 accountId = 1;
 	repeated ChatMessage chatMessages = 2;
 }
