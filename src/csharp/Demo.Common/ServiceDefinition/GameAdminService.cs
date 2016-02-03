@@ -29,15 +29,14 @@ namespace Demo.Common.ServiceDefinition {
               "Q2hhcmFjdGVyEgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkiJwoSQ2hhdE1l", 
               "c3NhZ2VSZXF1ZXN0EhEKCWFjY291bnRJZBgBIAEoBSJJCgtDaGF0TWVzc2Fn", 
               "ZRITCgtjaGFyYWN0ZXJJZBgBIAEoBRIUCgx0aW1lc3RhbXBVdGMYAiABKAMS", 
-              "DwoHbWVzc2FnZRgDIAEoCSJOChVDaGF0TWVzc2FnZUNvbGxlY3Rpb24SEQoJ", 
-              "YWNjb3VudElkGAEgASgFEiIKDGNoYXRNZXNzYWdlcxgCIAMoCzIMLkNoYXRN", 
-              "ZXNzYWdlMt8BChBHYW1lQWRtaW5TZXJ2aWNlEikKCkdldEFjY291bnQSDy5B", 
-              "Y2NvdW50UmVxdWVzdBoILkFjY291bnQiABJBCg5HZXRDaGF0SGlzdG9yeRIT", 
-              "LkNoYXRNZXNzYWdlUmVxdWVzdBoWLkNoYXRNZXNzYWdlQ29sbGVjdGlvbiIA", 
-              "KAESMwoKTGlzdGVuQ2hhdBITLkNoYXRNZXNzYWdlUmVxdWVzdBoMLkNoYXRN", 
-              "ZXNzYWdlIgAwARIoCgRDaGF0EgwuQ2hhdE1lc3NhZ2UaDC5DaGF0TWVzc2Fn", 
-              "ZSIAKAEwAUIgqgIdRGVtby5Db21tb24uU2VydmljZURlZmluaXRpb25iBnBy", 
-              "b3RvMw=="));
+              "DwoHbWVzc2FnZRgDIAEoCSI7ChVDaGF0TWVzc2FnZUNvbGxlY3Rpb24SIgoM", 
+              "Y2hhdE1lc3NhZ2VzGAIgAygLMgwuQ2hhdE1lc3NhZ2Uy3wEKEEdhbWVBZG1p", 
+              "blNlcnZpY2USKQoKR2V0QWNjb3VudBIPLkFjY291bnRSZXF1ZXN0GgguQWNj", 
+              "b3VudCIAEkEKDkdldENoYXRIaXN0b3J5EhMuQ2hhdE1lc3NhZ2VSZXF1ZXN0", 
+              "GhYuQ2hhdE1lc3NhZ2VDb2xsZWN0aW9uIgAoARIzCgpMaXN0ZW5DaGF0EhMu", 
+              "Q2hhdE1lc3NhZ2VSZXF1ZXN0GgwuQ2hhdE1lc3NhZ2UiADABEigKBENoYXQS", 
+              "DC5DaGF0TWVzc2FnZRoMLkNoYXRNZXNzYWdlIgAoATABQiCqAh1EZW1vLkNv", 
+              "bW1vbi5TZXJ2aWNlRGVmaW5pdGlvbmIGcHJvdG8z"));
         descriptor = pbr::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
             new pbr::FileDescriptor[] { },
             new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
@@ -46,7 +45,7 @@ namespace Demo.Common.ServiceDefinition {
               new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.Character), new[]{ "Id", "Name" }, null, null, null),
               new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessageRequest), new[]{ "AccountId" }, null, null, null),
               new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessage), new[]{ "CharacterId", "TimestampUtc", "Message" }, null, null, null),
-              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessageCollection), new[]{ "AccountId", "ChatMessages" }, null, null, null)
+              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessageCollection), new[]{ "ChatMessages" }, null, null, null)
             }));
       }
       #endregion
@@ -706,21 +705,11 @@ namespace Demo.Common.ServiceDefinition {
     partial void OnConstruction();
 
     public ChatMessageCollection(ChatMessageCollection other) : this() {
-      accountId_ = other.accountId_;
       chatMessages_ = other.chatMessages_.Clone();
     }
 
     public ChatMessageCollection Clone() {
       return new ChatMessageCollection(this);
-    }
-
-    public const int AccountIdFieldNumber = 1;
-    private int accountId_;
-    public int AccountId {
-      get { return accountId_; }
-      set {
-        accountId_ = value;
-      }
     }
 
     public const int ChatMessagesFieldNumber = 2;
@@ -742,14 +731,12 @@ namespace Demo.Common.ServiceDefinition {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (AccountId != other.AccountId) return false;
       if(!chatMessages_.Equals(other.chatMessages_)) return false;
       return true;
     }
 
     public override int GetHashCode() {
       int hash = 1;
-      if (AccountId != 0) hash ^= AccountId.GetHashCode();
       hash ^= chatMessages_.GetHashCode();
       return hash;
     }
@@ -759,18 +746,11 @@ namespace Demo.Common.ServiceDefinition {
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
-      if (AccountId != 0) {
-        output.WriteRawTag(8);
-        output.WriteInt32(AccountId);
-      }
       chatMessages_.WriteTo(output, _repeated_chatMessages_codec);
     }
 
     public int CalculateSize() {
       int size = 0;
-      if (AccountId != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AccountId);
-      }
       size += chatMessages_.CalculateSize(_repeated_chatMessages_codec);
       return size;
     }
@@ -778,9 +758,6 @@ namespace Demo.Common.ServiceDefinition {
     public void MergeFrom(ChatMessageCollection other) {
       if (other == null) {
         return;
-      }
-      if (other.AccountId != 0) {
-        AccountId = other.AccountId;
       }
       chatMessages_.Add(other.chatMessages_);
     }
@@ -792,10 +769,6 @@ namespace Demo.Common.ServiceDefinition {
           default:
             input.SkipLastField();
             break;
-          case 8: {
-            AccountId = input.ReadInt32();
-            break;
-          }
           case 18: {
             chatMessages_.AddEntriesFrom(input, _repeated_chatMessages_codec);
             break;
