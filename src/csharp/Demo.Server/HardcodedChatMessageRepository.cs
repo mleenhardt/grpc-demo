@@ -11,7 +11,7 @@ namespace Demo.Server
     {
         public Task<ICollection<ChatMessage>> GetAccountChatHistoryAsync(int accountId)
         {
-            var chatMessages = Enumerable.Range(0, 10).Select(_ => Utility.GetRandomChatMessage(accountId)).ToList() as ICollection<ChatMessage>;
+            var chatMessages = Enumerable.Range(0, 3).Select(_ => Utility.GetRandomChatMessage(accountId)).ToList() as ICollection<ChatMessage>;
             return Task.FromResult(chatMessages);
         }
 
@@ -19,7 +19,7 @@ namespace Demo.Server
         {
             var observable = Observable.Create<ChatMessage>(async observer =>
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     observer.OnNext(Utility.GetRandomChatMessage(accountId));
                     await Task.Delay(500);

@@ -22,6 +22,7 @@ namespace Demo.Server
 
         private static void Log(ServerCallContext context)
         {
+            Console.WriteLine(Environment.NewLine);
             Console.WriteLine($"{DateTime.UtcNow} -- RPC call, method={context.Method}, host={context.Host}, " +
                               $"peer={context.Peer}, headers={String.Join(", ", context.RequestHeaders.Select(h => h.ToString()))}");
         }
