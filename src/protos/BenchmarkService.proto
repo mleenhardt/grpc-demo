@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "Benchmark.Grpc.Common";
+
+service BenchmarkService {
+	rpc Operation(ServiceRequest) returns (ServiceResponse) {}
+	rpc OperationStream(stream ServiceRequest) returns (stream ServiceResponse) {}
+}
+
+message ServiceRequest {
+	int32 id = 1;
+}
+
+message ServiceResponse {
+	int32 id = 1;
+}
