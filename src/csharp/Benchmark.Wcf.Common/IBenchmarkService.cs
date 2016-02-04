@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using System.Threading.Tasks;
 
 namespace Benchmark.Wcf.Common
 {
@@ -7,5 +8,7 @@ namespace Benchmark.Wcf.Common
     {
         [OperationContract]
         ServiceResponse Operation(ServiceRequest request);
+        [OperationContract]
+        Task<ServiceResponse> OperationTaskAsync(ServiceRequest request);
     }
 }

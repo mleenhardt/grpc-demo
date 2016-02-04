@@ -15,9 +15,6 @@ namespace Benchmark.Wcf.Client
         {
             using (var client = new BenchmarkServiceClient())
             {
-                // Warmup
-                client.Proxy.Operation(new ServiceRequest { Id = 10 });
-
                 _timer.Elapsed += (s, e) =>
                 {
                     var lastMinuteCallCount = Interlocked.Exchange(ref _lastMinuteCallCount, 0);
