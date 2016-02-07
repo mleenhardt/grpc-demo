@@ -1,0 +1,11 @@
+{
+  "name": "demo",
+  "version": "0.1.0",
+  "scripts": {
+    "start-client": "node client.js",
+    "start-server": "node server.js"
+  },
+  "dependencies": {
+    "grpc": "0.12.0"
+  }
+}
