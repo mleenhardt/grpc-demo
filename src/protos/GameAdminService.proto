@@ -2,6 +2,8 @@
 
 option csharp_namespace = "Demo.Common.ServiceDefinition";
 
+package demo;
+
 service GameAdminService {
 	// Unary
 	rpc GetAccount(AccountRequest) returns (Account) {}

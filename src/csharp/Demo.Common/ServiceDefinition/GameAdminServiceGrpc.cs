@@ -10,7 +10,7 @@ using Grpc.Core;
 namespace Demo.Common.ServiceDefinition {
   public static class GameAdminService
   {
-    static readonly string __ServiceName = "GameAdminService";
+    static readonly string __ServiceName = "demo.GameAdminService";
 
     static readonly Marshaller<global::Demo.Common.ServiceDefinition.AccountRequest> __Marshaller_AccountRequest = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Demo.Common.ServiceDefinition.AccountRequest.Parser.ParseFrom);
     static readonly Marshaller<global::Demo.Common.ServiceDefinition.Account> __Marshaller_Account = Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Demo.Common.ServiceDefinition.Account.Parser.ParseFrom);
@@ -49,7 +49,7 @@ namespace Demo.Common.ServiceDefinition {
     // service descriptor
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Demo.Common.ServiceDefinition.Proto.GameAdminService.Descriptor.Services[0]; }
+      get { return global::Demo.Common.ServiceDefinition.GameAdminServiceReflection.Descriptor.Services[0]; }
     }
 
     // client interface

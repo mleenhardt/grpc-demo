@@ -9,48 +9,48 @@ using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
 namespace Demo.Common.ServiceDefinition {
 
-  namespace Proto {
+  /// <summary>Holder for reflection information generated from GameAdminService.proto</summary>
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public static partial class GameAdminServiceReflection {
 
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public static partial class GameAdminService {
-
-      #region Descriptor
-      public static pbr::FileDescriptor Descriptor {
-        get { return descriptor; }
-      }
-      private static pbr::FileDescriptor descriptor;
-
-      static GameAdminService() {
-        byte[] descriptorData = global::System.Convert.FromBase64String(
-            string.Concat(
-              "ChZHYW1lQWRtaW5TZXJ2aWNlLnByb3RvIiMKDkFjY291bnRSZXF1ZXN0EhEK", 
-              "CWFjY291bnRJZBgBIAEoBSJECgdBY2NvdW50EgoKAmlkGAEgASgFEg0KBWVt", 
-              "YWlsGAIgASgJEh4KCmNoYXJhY3RlcnMYAyADKAsyCi5DaGFyYWN0ZXIiJQoJ", 
-              "Q2hhcmFjdGVyEgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkiJwoSQ2hhdE1l", 
-              "c3NhZ2VSZXF1ZXN0EhEKCWFjY291bnRJZBgBIAEoBSJJCgtDaGF0TWVzc2Fn", 
-              "ZRITCgtjaGFyYWN0ZXJJZBgBIAEoBRIUCgx0aW1lc3RhbXBVdGMYAiABKAMS", 
-              "DwoHbWVzc2FnZRgDIAEoCSI7ChVDaGF0TWVzc2FnZUNvbGxlY3Rpb24SIgoM", 
-              "Y2hhdE1lc3NhZ2VzGAIgAygLMgwuQ2hhdE1lc3NhZ2Uy3wEKEEdhbWVBZG1p", 
-              "blNlcnZpY2USKQoKR2V0QWNjb3VudBIPLkFjY291bnRSZXF1ZXN0GgguQWNj", 
-              "b3VudCIAEkEKDkdldENoYXRIaXN0b3J5EhMuQ2hhdE1lc3NhZ2VSZXF1ZXN0", 
-              "GhYuQ2hhdE1lc3NhZ2VDb2xsZWN0aW9uIgAoARIzCgpMaXN0ZW5DaGF0EhMu", 
-              "Q2hhdE1lc3NhZ2VSZXF1ZXN0GgwuQ2hhdE1lc3NhZ2UiADABEigKBENoYXQS", 
-              "DC5DaGF0TWVzc2FnZRoMLkNoYXRNZXNzYWdlIgAoATABQiCqAh1EZW1vLkNv", 
-              "bW1vbi5TZXJ2aWNlRGVmaW5pdGlvbmIGcHJvdG8z"));
-        descriptor = pbr::FileDescriptor.InternalBuildGeneratedFileFrom(descriptorData,
-            new pbr::FileDescriptor[] { },
-            new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
-              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.AccountRequest), new[]{ "AccountId" }, null, null, null),
-              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.Account), new[]{ "Id", "Email", "Characters" }, null, null, null),
-              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.Character), new[]{ "Id", "Name" }, null, null, null),
-              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessageRequest), new[]{ "AccountId" }, null, null, null),
-              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessage), new[]{ "CharacterId", "TimestampUtc", "Message" }, null, null, null),
-              new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessageCollection), new[]{ "ChatMessages" }, null, null, null)
-            }));
-      }
-      #endregion
-
+    #region Descriptor
+    /// <summary>File descriptor for GameAdminService.proto</summary>
+    public static pbr::FileDescriptor Descriptor {
+      get { return descriptor; }
     }
+    private static pbr::FileDescriptor descriptor;
+
+    static GameAdminServiceReflection() {
+      byte[] descriptorData = global::System.Convert.FromBase64String(
+          string.Concat(
+            "ChZHYW1lQWRtaW5TZXJ2aWNlLnByb3RvEgRkZW1vIiMKDkFjY291bnRSZXF1",
+            "ZXN0EhEKCWFjY291bnRJZBgBIAEoBSJJCgdBY2NvdW50EgoKAmlkGAEgASgF",
+            "Eg0KBWVtYWlsGAIgASgJEiMKCmNoYXJhY3RlcnMYAyADKAsyDy5kZW1vLkNo",
+            "YXJhY3RlciIlCglDaGFyYWN0ZXISCgoCaWQYASABKAUSDAoEbmFtZRgCIAEo",
+            "CSInChJDaGF0TWVzc2FnZVJlcXVlc3QSEQoJYWNjb3VudElkGAEgASgFIkkK",
+            "C0NoYXRNZXNzYWdlEhMKC2NoYXJhY3RlcklkGAEgASgFEhQKDHRpbWVzdGFt",
+            "cFV0YxgCIAEoAxIPCgdtZXNzYWdlGAMgASgJIkAKFUNoYXRNZXNzYWdlQ29s",
+            "bGVjdGlvbhInCgxjaGF0TWVzc2FnZXMYAiADKAsyES5kZW1vLkNoYXRNZXNz",
+            "YWdlMocCChBHYW1lQWRtaW5TZXJ2aWNlEjMKCkdldEFjY291bnQSFC5kZW1v",
+            "LkFjY291bnRSZXF1ZXN0Gg0uZGVtby5BY2NvdW50IgASSwoOR2V0Q2hhdEhp",
+            "c3RvcnkSGC5kZW1vLkNoYXRNZXNzYWdlUmVxdWVzdBobLmRlbW8uQ2hhdE1l",
+            "c3NhZ2VDb2xsZWN0aW9uIgAoARI9CgpMaXN0ZW5DaGF0EhguZGVtby5DaGF0",
+            "TWVzc2FnZVJlcXVlc3QaES5kZW1vLkNoYXRNZXNzYWdlIgAwARIyCgRDaGF0",
+            "EhEuZGVtby5DaGF0TWVzc2FnZRoRLmRlbW8uQ2hhdE1lc3NhZ2UiACgBMAFC",
+            "IKoCHURlbW8uQ29tbW9uLlNlcnZpY2VEZWZpbml0aW9uYgZwcm90bzM="));
+      descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
+          new pbr::FileDescriptor[] { },
+          new pbr::GeneratedCodeInfo(null, new pbr::GeneratedCodeInfo[] {
+            new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.AccountRequest), global::Demo.Common.ServiceDefinition.AccountRequest.Parser, new[]{ "AccountId" }, null, null, null),
+            new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.Account), global::Demo.Common.ServiceDefinition.Account.Parser, new[]{ "Id", "Email", "Characters" }, null, null, null),
+            new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.Character), global::Demo.Common.ServiceDefinition.Character.Parser, new[]{ "Id", "Name" }, null, null, null),
+            new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessageRequest), global::Demo.Common.ServiceDefinition.ChatMessageRequest.Parser, new[]{ "AccountId" }, null, null, null),
+            new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessage), global::Demo.Common.ServiceDefinition.ChatMessage.Parser, new[]{ "CharacterId", "TimestampUtc", "Message" }, null, null, null),
+            new pbr::GeneratedCodeInfo(typeof(global::Demo.Common.ServiceDefinition.ChatMessageCollection), global::Demo.Common.ServiceDefinition.ChatMessageCollection.Parser, new[]{ "ChatMessages" }, null, null, null)
+          }));
+    }
+    #endregion
+
   }
   #region Messages
   [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -59,7 +59,7 @@ namespace Demo.Common.ServiceDefinition {
     public static pb::MessageParser<AccountRequest> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Demo.Common.ServiceDefinition.Proto.GameAdminService.Descriptor.MessageTypes[0]; }
+      get { return global::Demo.Common.ServiceDefinition.GameAdminServiceReflection.Descriptor.MessageTypes[0]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -80,6 +80,7 @@ namespace Demo.Common.ServiceDefinition {
       return new AccountRequest(this);
     }
 
+    /// <summary>Field number for the "accountId" field.</summary>
     public const int AccountIdFieldNumber = 1;
     private int accountId_;
     public int AccountId {
@@ -111,7 +112,7 @@ namespace Demo.Common.ServiceDefinition {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
@@ -161,7 +162,7 @@ namespace Demo.Common.ServiceDefinition {
     public static pb::MessageParser<Account> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Demo.Common.ServiceDefinition.Proto.GameAdminService.Descriptor.MessageTypes[1]; }
+      get { return global::Demo.Common.ServiceDefinition.GameAdminServiceReflection.Descriptor.MessageTypes[1]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -184,6 +185,7 @@ namespace Demo.Common.ServiceDefinition {
       return new Account(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private int id_;
     public int Id {
@@ -193,6 +195,7 @@ namespace Demo.Common.ServiceDefinition {
       }
     }
 
+    /// <summary>Field number for the "email" field.</summary>
     public const int EmailFieldNumber = 2;
     private string email_ = "";
     public string Email {
@@ -202,6 +205,7 @@ namespace Demo.Common.ServiceDefinition {
       }
     }
 
+    /// <summary>Field number for the "characters" field.</summary>
     public const int CharactersFieldNumber = 3;
     private static readonly pb::FieldCodec<global::Demo.Common.ServiceDefinition.Character> _repeated_characters_codec
         = pb::FieldCodec.ForMessage(26, global::Demo.Common.ServiceDefinition.Character.Parser);
@@ -236,7 +240,7 @@ namespace Demo.Common.ServiceDefinition {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
@@ -307,7 +311,7 @@ namespace Demo.Common.ServiceDefinition {
     public static pb::MessageParser<Character> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Demo.Common.ServiceDefinition.Proto.GameAdminService.Descriptor.MessageTypes[2]; }
+      get { return global::Demo.Common.ServiceDefinition.GameAdminServiceReflection.Descriptor.MessageTypes[2]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -329,6 +333,7 @@ namespace Demo.Common.ServiceDefinition {
       return new Character(this);
     }
 
+    /// <summary>Field number for the "id" field.</summary>
     public const int IdFieldNumber = 1;
     private int id_;
     public int Id {
@@ -338,6 +343,7 @@ namespace Demo.Common.ServiceDefinition {
       }
     }
 
+    /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 2;
     private string name_ = "";
     public string Name {
@@ -371,7 +377,7 @@ namespace Demo.Common.ServiceDefinition {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
@@ -435,7 +441,7 @@ namespace Demo.Common.ServiceDefinition {
     public static pb::MessageParser<ChatMessageRequest> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Demo.Common.ServiceDefinition.Proto.GameAdminService.Descriptor.MessageTypes[3]; }
+      get { return global::Demo.Common.ServiceDefinition.GameAdminServiceReflection.Descriptor.MessageTypes[3]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -456,6 +462,7 @@ namespace Demo.Common.ServiceDefinition {
       return new ChatMessageRequest(this);
     }
 
+    /// <summary>Field number for the "accountId" field.</summary>
     public const int AccountIdFieldNumber = 1;
     private int accountId_;
     public int AccountId {
@@ -487,7 +494,7 @@ namespace Demo.Common.ServiceDefinition {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
@@ -537,7 +544,7 @@ namespace Demo.Common.ServiceDefinition {
     public static pb::MessageParser<ChatMessage> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Demo.Common.ServiceDefinition.Proto.GameAdminService.Descriptor.MessageTypes[4]; }
+      get { return global::Demo.Common.ServiceDefinition.GameAdminServiceReflection.Descriptor.MessageTypes[4]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -560,6 +567,7 @@ namespace Demo.Common.ServiceDefinition {
       return new ChatMessage(this);
     }
 
+    /// <summary>Field number for the "characterId" field.</summary>
     public const int CharacterIdFieldNumber = 1;
     private int characterId_;
     public int CharacterId {
@@ -569,6 +577,7 @@ namespace Demo.Common.ServiceDefinition {
       }
     }
 
+    /// <summary>Field number for the "timestampUtc" field.</summary>
     public const int TimestampUtcFieldNumber = 2;
     private long timestampUtc_;
     public long TimestampUtc {
@@ -578,6 +587,7 @@ namespace Demo.Common.ServiceDefinition {
       }
     }
 
+    /// <summary>Field number for the "message" field.</summary>
     public const int MessageFieldNumber = 3;
     private string message_ = "";
     public string Message {
@@ -613,7 +623,7 @@ namespace Demo.Common.ServiceDefinition {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
@@ -691,7 +701,7 @@ namespace Demo.Common.ServiceDefinition {
     public static pb::MessageParser<ChatMessageCollection> Parser { get { return _parser; } }
 
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Demo.Common.ServiceDefinition.Proto.GameAdminService.Descriptor.MessageTypes[5]; }
+      get { return global::Demo.Common.ServiceDefinition.GameAdminServiceReflection.Descriptor.MessageTypes[5]; }
     }
 
     pbr::MessageDescriptor pb::IMessage.Descriptor {
@@ -712,6 +722,7 @@ namespace Demo.Common.ServiceDefinition {
       return new ChatMessageCollection(this);
     }
 
+    /// <summary>Field number for the "chatMessages" field.</summary>
     public const int ChatMessagesFieldNumber = 2;
     private static readonly pb::FieldCodec<global::Demo.Common.ServiceDefinition.ChatMessage> _repeated_chatMessages_codec
         = pb::FieldCodec.ForMessage(18, global::Demo.Common.ServiceDefinition.ChatMessage.Parser);
@@ -742,7 +753,7 @@ namespace Demo.Common.ServiceDefinition {
     }
 
     public override string ToString() {
-      return pb::JsonFormatter.Default.Format(this);
+      return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
     public void WriteTo(pb::CodedOutputStream output) {
